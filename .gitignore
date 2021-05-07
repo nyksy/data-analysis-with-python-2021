@@ -1,0 +1,4 @@
+**/tmc/**
+course_config.toml
+__pycache__
+**/test
