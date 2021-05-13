@@ -2,18 +2,29 @@
 
 import numpy as np
 
+
 def get_row_vectors(a):
-    return []
+    rows = [rivi for rivi in a]
+    for item in rows:
+        item.shape = (1, len(item))
+    return rows
+
 
 def get_column_vectors(a):
-    return []
+    transposed = [rivi for rivi in a.T]
+
+    for item in transposed:
+        item.shape = (len(item), 1)
+    return transposed
+
 
 def main():
     np.random.seed(0)
-    a=np.random.randint(0,10, (4,4))
+    a = np.random.randint(0, 10, (4, 4))
     print("a:", a)
     print("Row vectors:", get_row_vectors(a))
     print("Column vectors:", get_column_vectors(a))
+
 
 if __name__ == "__main__":
     main()
