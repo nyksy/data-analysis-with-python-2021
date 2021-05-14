@@ -2,11 +2,17 @@
 
 import numpy as np
 
+
 def first_half_second_half(a):
-    return np.array([])
+    # pilkotaan jokainen rivi puoliksi ja vertaillaan summia
+    return a[np.sum(a[:, :a.shape[1]//2], axis=1) > np.sum(a[:, a.shape[1]//2:], axis=1)]
+
 
 def main():
-    pass
+    np.random.seed(0)
+    a = np.random.randn(10, 2*10)
+    print("result:\n", first_half_second_half(a))
+
 
 if __name__ == "__main__":
     main()
