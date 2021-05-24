@@ -2,11 +2,22 @@
 
 import pandas as pd
 
+
 def snow_depth():
-    return 0.0
+
+    # luetaan data
+    weather_df = pd.read_csv(
+        'src/kumpula-weather-2017.csv',
+        sep=','
+    )
+
+    # käytetään lumen syvyys -kolumnille max-funktiota
+    return weather_df['Snow depth (cm)'].max()
+
 
 def main():
-    return
+    print('Max snow depth:', format(snow_depth(), '.1f'))
+
 
 if __name__ == "__main__":
     main()
