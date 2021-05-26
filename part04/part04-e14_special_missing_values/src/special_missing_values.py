@@ -17,6 +17,7 @@ def special_missing_values():
 
     # palautetaan ne kappaleet, joiden sijoitus on huonontunut viimeviikosta
     return df[df['Pos'].astype(int) > df['LW'].astype(float)]
+    
 
 
 def main():
