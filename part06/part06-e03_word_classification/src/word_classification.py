@@ -104,7 +104,7 @@ def word_classification():
 
     model = MultinomialNB()
     cvs = model_selection.KFold(n_splits=5, shuffle=True, random_state=0)
-    
+
     return cross_val_score(model, X, y, cv=cvs)
 
 
